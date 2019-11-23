@@ -392,6 +392,11 @@ class Message {
    * message.edit('This is my new content!')
    *   .then(msg => console.log(`New message content: ${msg}`))
    *   .catch(console.error);
+   * @example
+   * // Update the content right after sending a message
+   * message.channel.send('This is some content!')
+   *   .then(msg => msg.edit("This is my new content!"))
+   *   .catch(console.error);
    */
   edit(content, options) {
     if (!options && typeof content === 'object' && !(content instanceof Array)) {
